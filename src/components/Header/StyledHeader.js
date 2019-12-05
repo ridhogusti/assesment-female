@@ -74,6 +74,39 @@ const StyledLinkLogin = styled.a`
   background-repeat: no-repeat;
   color: #fff;
 `;
+
+// file MainHeaderCategories.js
+const StyledMainHeaderCategories = styled.div`
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #d0d0d0;
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 60px;
+  z-index: 2;
+  justify-content: center;
+`;
+const StyledMainHeaderCategoriesCenter = styled.div`
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+`;
+const StyledMainHeaderCategoriesItem = styled.a`
+  font-weight: bold;
+  font-size: 14px;
+  margin: 10px 15px;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  &:hover {
+    color: #db284e;
+  }
+`;
 export {
   SytledHeader,
   StyledMainHeader,
@@ -83,5 +116,8 @@ export {
   StyledSearchInputHome,
   StyledMainHeaderRight,
   StyledHeaderLogin,
-  StyledLinkLogin
+  StyledLinkLogin,
+  StyledMainHeaderCategories,
+  StyledMainHeaderCategoriesCenter,
+  StyledMainHeaderCategoriesItem
 };
