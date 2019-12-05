@@ -107,6 +107,7 @@ const StyledMainHeaderCategoriesItem = styled.a`
     color: #db284e;
   }
 `;
+
 export {
   SytledHeader,
   StyledMainHeader,
