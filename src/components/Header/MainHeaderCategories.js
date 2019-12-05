@@ -45,7 +45,7 @@ const MainHeaderCategories = () => {
       <StyledMainHeaderCategoriesCenter>
         {listItemLink.map(item => {
           return (
-            <StyledMainHeaderCategoriesItem href={item.link}>
+            <StyledMainHeaderCategoriesItem key={item.name} href={item.link}>
               {item.name}
             </StyledMainHeaderCategoriesItem>
           );
