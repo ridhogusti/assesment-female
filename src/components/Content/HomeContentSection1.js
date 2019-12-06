@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyledHomeContentSection1,
   StyledBannerTop,
@@ -9,7 +9,14 @@ import {
 } from "./StyledContent";
 import EditorChoiceList from "./EditorChoiceList";
 
-const HomeContentSection1 = () => {
+const HomeContentSection1 = ({ data }) => {
+  const [dataEditor, setDataEditor] = useState([]);
+
+  useEffect(() => {
+    if (data.data.length !== 0) {
+      setDataEditor(data.data["editor's choice"]);
+    }
+  }, [data]);
   return (
     <StyledHomeContentSection1>
       <StyledBannerTop>
@@ -23,11 +30,9 @@ const HomeContentSection1 = () => {
       <StyledTitleSection>Editor's Choice</StyledTitleSection>
       <StyledTitleSectionChild>Curated with love</StyledTitleSectionChild>
       <StyledEditorChoiceList>
-        <EditorChoiceList></EditorChoiceList>
-        <EditorChoiceList></EditorChoiceList>
-        <EditorChoiceList></EditorChoiceList>
-        <EditorChoiceList></EditorChoiceList>
-        <EditorChoiceList></EditorChoiceList>
+        {dataEditor.map((item, idx) => {
+          return <EditorChoiceList data={item} key={idx}></EditorChoiceList>;
+        })}
       </StyledEditorChoiceList>
     </StyledHomeContentSection1>
   );

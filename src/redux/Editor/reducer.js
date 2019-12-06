@@ -1,6 +1,6 @@
 import * as ActionType from "./constants";
 const initExample = {
-  editor: {
+  editors: {
     isLoading: false,
     data: [],
     error: false,
@@ -11,8 +11,8 @@ const initExample = {
 export const getEditorRequest = (state, payload) => {
   return {
     ...state,
-    editor: {
-      ...state.editor,
+    editors: {
+      ...state.editors,
       isLoading: true,
       error: false,
       errorMessage: null
@@ -22,8 +22,8 @@ export const getEditorRequest = (state, payload) => {
 export const getEditorSuccess = (state, payload) => {
   return {
     ...state,
-    editor: {
-      ...state.editor,
+    editors: {
+      ...state.editors,
       isLoading: false,
       data: payload.data
     }
@@ -32,8 +32,8 @@ export const getEditorSuccess = (state, payload) => {
 export const getEditorError = (state, payload) => {
   return {
     ...state,
-    editor: {
-      ...state.editor,
+    editors: {
+      ...state.editors,
       isLoading: false,
       error: true,
       errorMessage: payload.error

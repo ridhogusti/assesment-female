@@ -7,15 +7,12 @@ import * as ActionType from "./constants";
 function getEditorApi() {
   return axios.request({
     method: "get",
-    url: "http://localhost:3000/data"
+    url: "https://virtserver.swaggerhub.com/hqms/FDN-WP/0.1/wp"
   });
 }
 function* getEditor(data) {
   try {
-    const option = {
-      query: data.payload
-    };
-    const res = yield call(getEditorApi(), option);
+    const res = yield call(getEditorApi);
     yield put(action.getEditorSuccess(res));
   } catch (error) {
     yield put(action.getEditorError(error));

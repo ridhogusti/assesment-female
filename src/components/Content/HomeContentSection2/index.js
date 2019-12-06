@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ArticleList from "./ArticleList";
 import {
   StyledHomeContentSection2,
@@ -9,7 +9,14 @@ import {
   StyledIconArrowRight
 } from "./StyledHomeComeSection2";
 
-const HomeContentSection2 = () => {
+const HomeContentSection2 = ({ data }) => {
+  const [dataEditor, setDataEditor] = useState([]);
+
+  useEffect(() => {
+    if (data.data.length !== 0) {
+      setDataEditor(data.data["latest articles"]);
+    }
+  }, [data]);
   return (
     <StyledHomeContentSection2>
       <StyledTitleSection>Latest Articles</StyledTitleSection>
@@ -20,7 +27,7 @@ const HomeContentSection2 = () => {
           <StyledIconArrowRight></StyledIconArrowRight>
         </StyledSeeMoreActicles>
       </StyledTitleSplit>
-      <ArticleList />
+      <ArticleList data={dataEditor} />
     </StyledHomeContentSection2>
   );
 };
