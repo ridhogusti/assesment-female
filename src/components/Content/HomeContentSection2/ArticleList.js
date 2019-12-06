@@ -11,7 +11,6 @@ import {
 } from "./StyledHomeComeSection2";
 
 const ArticleList = ({ data }) => {
-  console.log(data);
   return (
     <StyledArticleList>
       {data.map((item, idx) => {
