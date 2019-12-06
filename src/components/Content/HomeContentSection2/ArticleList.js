@@ -10,28 +10,23 @@ import {
   StyledArticleAuthorName
 } from "./StyledHomeComeSection2";
 
-const ArticleList = () => {
+const ArticleList = ({ data }) => {
   return (
     <StyledArticleList>
-      {[1, 2, 3, 4, 5, 6, 7].map(item => {
+      {data.map((item, idx) => {
         return (
-          <StyledArticleListItem key={item} hiddenMargin={item % 3 === 0}>
+          <StyledArticleListItem key={idx} hiddenMargin={(idx + 1) % 3 === 0}>
             <StyledArticleCard>
               <StyledArticleImage>
                 <StyledArticleCardSponsored>
                   SPONSORED
                 </StyledArticleCardSponsored>
-                <img
-                  src="//imgcdn.femaledaily.com/2019/12/PSX_20191204_203204.jpg"
-                  alt="articleimage"
-                />
+                <img src={item.image} alt="articleimage" />
               </StyledArticleImage>
-              <StyledArticleTitle>
-                Eksperimen Menjelang Akhir Tahun: Saya Mencoba Bold Eye Makeup!
-              </StyledArticleTitle>
+              <StyledArticleTitle>{item.title}</StyledArticleTitle>
               <StyledArticleAuthor>
-                <StyledArticleAuthorName>arindakristie</StyledArticleAuthorName>{" "}
-                | 4 hours ago
+                <StyledArticleAuthorName>{item.author}</StyledArticleAuthorName>{" "}
+                | {item.published_at}
               </StyledArticleAuthor>
             </StyledArticleCard>
           </StyledArticleListItem>

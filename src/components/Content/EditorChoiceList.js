@@ -19,7 +19,7 @@ import {
   StyledProductCardEditorTitle
 } from "./StyledContent";
 
-const EditorChoiceList = () => {
+const EditorChoiceList = ({ data }) => {
   return (
     <StyledEditorChoiceListItem>
       <StyledTasteProductEditorContainer>
@@ -31,18 +31,20 @@ const EditorChoiceList = () => {
             />
           </StyledEditorImage>
           <div>
-            <StyledEditorName>arindakristie</StyledEditorName>
-            <StyledEditorPosition>Managing Editor</StyledEditorPosition>
+            <StyledEditorName>{data.editor}</StyledEditorName>
+            <StyledEditorPosition>{data.role}</StyledEditorPosition>
           </div>
         </StyledEditorCard>
         <StyledProductCardEditor>
           <StyledProductCardEditorImageContainer href="https://reviews.femaledaily.com/products/treatment/serum-essence-23/lancome/advanced-genifique-youth-activating-concentrate?cat=&cat_id=0&age=&order=nrd&page=1">
-            <StyledProductCardEditorImage srcSet="https://static.femaledaily.com/dyn/150/images/prod-pics/product_1569842377_Lancome__800x800.jpg"></StyledProductCardEditorImage>
+            <StyledProductCardEditorImage
+              srcSet={data.product.image}
+            ></StyledProductCardEditorImage>
           </StyledProductCardEditorImageContainer>
           <StyledProductCardEditorDetail>
             <StyledProductCardEditorRating>
               <StyledProductCardEditorRatingAverage>
-                5
+                {data.product.rating}
               </StyledProductCardEditorRatingAverage>
               <StyledCardStarList>
                 <StyledCardStarListItem></StyledCardStarListItem>
@@ -55,9 +57,11 @@ const EditorChoiceList = () => {
                 (542)
               </StyledProductCardEditorRatingTotal>
             </StyledProductCardEditorRating>
-            <StyledProductCardEditorBrand>Lancome</StyledProductCardEditorBrand>
+            <StyledProductCardEditorBrand>
+              {data.product.name}
+            </StyledProductCardEditorBrand>
             <StyledProductCardEditorTitle>
-              Advanced Génifique Youth Activating Serum
+              {data.product.description}
             </StyledProductCardEditorTitle>
           </StyledProductCardEditorDetail>
         </StyledProductCardEditor>
