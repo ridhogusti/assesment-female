@@ -2,8 +2,12 @@ import React from "react";
 import {
   StyledHomeContentSection1,
   StyledBannerTop,
-  StyledBillboardBanner
+  StyledBillboardBanner,
+  StyledTitleSection,
+  StyledTitleSectionChild,
+  StyledEditorChoiceList
 } from "./StyledContent";
+import EditorChoiceList from "./EditorChoiceList";
 
 const HomeContentSection1 = () => {
   return (
@@ -16,6 +20,15 @@ const HomeContentSection1 = () => {
         <h4>BILLBOARD banner</h4>
         <h5>970x250 pixels</h5>
       </StyledBillboardBanner>
+      <StyledTitleSection>Editor's Choice</StyledTitleSection>
+      <StyledTitleSectionChild>Curated with love</StyledTitleSectionChild>
+      <StyledEditorChoiceList>
+        <EditorChoiceList></EditorChoiceList>
+        <EditorChoiceList></EditorChoiceList>
+        <EditorChoiceList></EditorChoiceList>
+        <EditorChoiceList></EditorChoiceList>
+        <EditorChoiceList></EditorChoiceList>
+      </StyledEditorChoiceList>
     </StyledHomeContentSection1>
   );
 };
